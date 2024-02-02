@@ -12,6 +12,9 @@ struct Index { // 自定义组件： 可复用 的UI单元
           .onClick(()=>{ // 事件方法
             this.num++
           })
+        Image('https://lf-cdn-tos.bytescm.com/obj/static/xitu_extension/static/brand.82c24770.svg').width(250)
+        Image($r('app.media.icon')).width(250).interpolation(ImageInterpolation.High)
+        Image($rawfile('icon.png')).width(250).interpolation(ImageInterpolation.High)
       }
       .width('100%')
     }
