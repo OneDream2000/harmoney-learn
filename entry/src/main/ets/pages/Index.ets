@@ -1,14 +1,17 @@
-@Entry
-@Component
-struct Index {
-  @State message: string = 'Hello World'
-
-  build() {
+@Entry // 标记当前组件是入口组件
+@Component // 标记自定义组件
+struct Index { // 自定义组件： 可复用 的UI单元
+  @State message: string = 'Hello World---'
+  @State num: number = 0
+  build() { // UI 描述：其内部以声明式方法描述UI 结构
     Row() {
-      Column() {
-        Text(this.message)
-          .fontSize(50)
+      Column() { // 容器组件
+        Text(this.message + this.num) // 基础组件
+          .fontSize(50) // 属性
           .fontWeight(FontWeight.Bold)
+          .onClick(()=>{ // 事件方法
+            this.num++
+          })
       }
       .width('100%')
     }
