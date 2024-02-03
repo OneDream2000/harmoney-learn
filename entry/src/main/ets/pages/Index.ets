@@ -3,6 +3,7 @@
 struct Index { // 自定义组件： 可复用 的UI单元
   @State message: string = 'Hello World---'
   @State num: number = 0
+  @State imageWidth: number = 100
   build() { // UI 描述：其内部以声明式方法描述UI 结构
     Row() {
       Column() { // 容器组件
@@ -12,10 +13,13 @@ struct Index { // 自定义组件： 可复用 的UI单元
           .onClick(()=>{ // 事件方法
             this.num++
           })
-        Image('https://lf-cdn-tos.bytescm.com/obj/static/xitu_extension/static/brand.82c24770.svg').width(100)
+        Image('https://lf-cdn-tos.bytescm.com/obj/static/xitu_extension/static/brand.82c24770.svg').width(this.imageWidth)
         Image($r('app.media.icon')).width(50).interpolation(ImageInterpolation.High)
         Image($rawfile('icon.png')).width(50).interpolation(ImageInterpolation.High)
         Text($r('app.string.use_text'))
+        TextInput({text: this.imageWidth.toFixed(0)}).type(InputType.Number).onChange((val)=>{
+          this.imageWidth = parseInt(val)
+        })
       }
       .width('100%')
     }
