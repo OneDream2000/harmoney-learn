@@ -14,7 +14,11 @@
     },
     {
       "name": "use_text",
-      "value": "中文"
+      "value": "英文"
+    },
+    {
+      "name": "test",
+      "value": "图片宽度"
     }
   ]
 }

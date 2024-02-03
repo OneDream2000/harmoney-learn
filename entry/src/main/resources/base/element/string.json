@@ -15,6 +15,10 @@
     {
       "name": "use_text",
       "value": "中文"
+    },
+    {
+      "name": "test",
+      "value": "图片宽度"
     }
   ]
 }
